@@ -2,6 +2,7 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express()
 mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
@@ -11,6 +12,7 @@ mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopolo
 // MIDDLEWARE
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
+app.use(cors())
 
 // CONTROLLERS
 const booksController = require('./controllers/books_controller.js')
