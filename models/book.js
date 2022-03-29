@@ -4,11 +4,11 @@ const { Schema } = mongoose
 
 // Schema
 const bookSchema = new Schema({
-  title: String,
-  description: String,
-  year: Number,
-  quantity: Number,
-  imageURL: String
+  title: { type: String, required: true},
+  description: { type: String, required: true},
+  year: { type: Number, required: true},
+  quantity: { type: Number, required: true},
+  imageURL: { type: String, required: true}
 })
 
 // Model and export
